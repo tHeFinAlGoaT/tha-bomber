@@ -1,0 +1,542 @@
+{
+    "From": {
+        "1": {
+          "Name": "Walmart",
+          "Email": "security@walmart.com"
+        },
+        "2": {
+          "Name": "eBay",
+          "Email": "security@ebay.com"
+        },
+        "3": {
+          "Name": "Best Buy",
+          "Email": "security@bestbuy.com"
+        },
+        "4": {
+          "Name": "Target",
+          "Email": "security@target.com"
+        },
+        "5": {
+          "Name": "Nordstrom",
+          "Email": "security@nordstrom.com"
+        },
+        "6": {
+          "Name": "Macy's",
+          "Email": "security@macys.com"
+        },
+        "7": {
+          "Name": "Kohl's",
+          "Email": "security@kohls.com"
+        },
+        "8": {
+          "Name": "Home Depot",
+          "Email": "security@homedepot.com"
+        },
+        "9": {
+          "Name": "Lowes",
+          "Email": "security@lowes.com"
+        },
+        "10": {
+          "Name": "Sephora",
+          "Email": "security@sephora.com"
+        },
+        "11": {
+          "Name": "Zara",
+          "Email": "security@zara.com"
+        },
+        "12": {
+          "Name": "Forever 21",
+          "Email": "security@forever21.com"
+        },
+        "13": {
+          "Name": "H&M",
+          "Email": "security@hm.com"
+        },
+        "14": {
+          "Name": "Old Navy",
+          "Email": "security@oldnavy.com"
+        },
+        "15": {
+          "Name": "Foot Locker",
+          "Email": "security@footlocker.com"
+        },
+        "16": {
+          "Name": "Nike",
+          "Email": "security@nike.com"
+        },
+        "17": {
+          "Name": "Adidas",
+          "Email": "security@adidas.com"
+        },
+        "18": {
+          "Name": "Under Armour",
+          "Email": "security@underarmour.com"
+        },
+        "19": {
+          "Name": "The North Face",
+          "Email": "security@thenorthface.com"
+        },
+        "20": {
+          "Name": "Patagonia",
+          "Email": "security@patagonia.com"
+        },
+        "21": {
+          "Name": "Columbia",
+          "Email": "security@columbia.com"
+        },
+        "22": {
+          "Name": "REI",
+          "Email": "security@rei.com"
+        },
+        "23": {
+          "Name": "Williams Sonoma",
+          "Email": "security@williamssonoma.com"
+        },
+        "24": {
+          "Name": "Bed Bath & Beyond",
+          "Email": "security@bedbathandbeyond.com"
+        },
+        "25": {
+          "Name": "Crate & Barrel",
+          "Email": "security@crateandbarrel.com"
+        },
+        "26": {
+          "Name": "West Elm",
+          "Email": "security@westelm.com"
+        },
+        "27": {
+          "Name": "Pottery Barn",
+          "Email": "security@potterybarn.com"
+        },
+        "28": {
+          "Name": "Anthropologie",
+          "Email": "security@anthropologie.com"
+        },
+        "29": {
+          "Name": "Urban Outfitters",
+          "Email": "security@urbanoutfitters.com"
+        },
+        "30": {
+          "Name": "Forever Living",
+          "Email": "security@foreverliving.com"
+        },
+        "31": {
+          "Name": "Ray-Ban",
+          "Email": "security@rayban.com"
+        },
+        "32": {
+          "Name": "Oakley",
+          "Email": "security@oakley.com"
+        },
+        "33": {
+          "Name": "Warby Parker",
+          "Email": "security@warbyparker.com"
+        },
+        "34": {
+          "Name": "Chanel",
+          "Email": "security@chanel.com"
+        },
+        "35": {
+          "Name": "Gucci",
+          "Email": "security@gucci.com"
+        },
+        "36": {
+          "Name": "Louis Vuitton",
+          "Email": "security@louisvuitton.com"
+        },
+        "37": {
+          "Name": "Prada",
+          "Email": "security@prada.com"
+        },
+        "38": {
+          "Name": "Coach",
+          "Email": "security@coach.com"
+        },
+        "39": {
+          "Name": "Michael Kors",
+          "Email": "security@michaelkors.com"
+        },
+        "40": {
+          "Name": "Apple",
+          "Email": "security@apple.com"
+        },
+        "41": {
+          "Name": "Samsung",
+          "Email": "security@samsung.com"
+        },
+        "42": {
+          "Name": "Microsoft",
+          "Email": "security@microsoft.com"
+        },
+        "43": {
+          "Name": "Dell",
+          "Email": "security@dell.com"
+        },
+        "44": {
+          "Name": "HP",
+          "Email": "security@hp.com"
+        },
+        "45": {
+          "Name": "Lenovo",
+          "Email": "security@lenovo.com"
+        },
+        "46": {
+          "Name": "Asus",
+          "Email": "security@asus.com"
+        },
+        "47": {
+          "Name": "Acer",
+          "Email": "security@acer.com"
+        },
+        "48": {
+          "Name": "Best Buy Mobile",
+          "Email": "security@bestbuymobile.com"
+        },
+        "49": {
+          "Name": "AT&T",
+          "Email": "security@att.com"
+        },
+        "50": {
+          "Name": "JPMorgan Chase",
+          "Email": "security@jpmorganchase.com"
+        },
+        "51": {
+          "Name": "Bank of America",
+          "Email": "security@bankofamerica.com"
+        },
+        "52": {
+          "Name": "Wells Fargo",
+          "Email": "security@wellsfargo.com"
+        },
+        "53": {
+          "Name": "Citigroup",
+          "Email": "security@citigroup.com"
+        },
+        "54": {
+          "Name": "U.S. Bancorp",
+          "Email": "security@usbank.com"
+        },
+        "55": {
+          "Name": "PNC Financial Services",
+          "Email": "security@pnc.com"
+        },
+        "56": {
+          "Name": "Capital One",
+          "Email": "security@capitalone.com"
+        },
+        "57": {
+          "Name": "TD Bank",
+          "Email": "security@tdbank.com"
+        },
+        "58": {
+          "Name": "BB&T",
+          "Email": "security@bbt.com"
+        },
+        "59": {
+          "Name": "HSBC",
+          "Email": "security@hsbc.com"
+        },
+        "60": {
+          "Name": "McDonald's",
+          "Email": "security@mcdonalds.com"
+        },
+        "61": {
+          "Name": "Burger King",
+          "Email": "security@bk.com"
+        },
+        "62": {
+          "Name": "Wendy's",
+          "Email": "security@wendys.com"
+        },
+        "63": {
+          "Name": "Taco Bell",
+          "Email": "security@tacobell.com"
+        },
+        "64": {
+          "Name": "KFC",
+          "Email": "security@kfc.com"
+        },
+        "65": {
+          "Name": "Pizza Hut",
+          "Email": "security@pizzahut.com"
+        },
+        "66": {
+          "Name": "Domino's",
+          "Email": "security@dominos.com"
+        },
+        "67": {
+          "Name": "Subway",
+          "Email": "security@subway.com"
+        },
+        "68": {
+          "Name": "Dunkin' Donuts",
+          "Email": "security@dunkindonuts.com"
+        },
+        "69": {
+          "Name": "Starbucks",
+          "Email": "security@starbucks.com"
+        },
+        "70": {
+          "Name": "Chick-fil-A",
+          "Email": "security@chickfila.com"
+        },
+        "71": {
+          "Name": "Arby's",
+          "Email": "security@arbys.com"
+        },
+        "72": {
+          "Name": "Dairy Queen",
+          "Email": "security@dairyqueen.com"
+        },
+        "73": {
+          "Name": "Jack in the Box",
+          "Email": "security@jackinthebox.com"
+        },
+        "74": {
+          "Name": "Hardee's",
+          "Email": "security@hardees.com"
+        },
+        "75": {
+          "Name": "Popeyes",
+          "Email": "security@popeyes.com"
+        },
+        "76": {
+          "Name": "Carl's Jr.",
+          "Email": "security@carlsjr.com"
+        },
+        "77": {
+          "Name": "Five Guys",
+          "Email": "security@fiveguys.com"
+        },
+        "78": {
+          "Name": "In-N-Out Burger",
+          "Email": "security@innout.com"
+        },
+        "79": {
+          "Name": "Whataburger",
+          "Email": "security@whataburger.com"
+        },
+        "80": {
+          "Name": "Shake Shack",
+          "Email": "security@shakeshack.com"
+        },
+        "81": {
+          "Name": "Culver's",
+          "Email": "security@culvers.com"
+        },
+        "82": {
+          "Name": "Panera Bread",
+          "Email": "security@panerabread.com"
+        },
+        "83": {
+          "Name": "Olive Garden",
+          "Email": "security@olivegarden.com"
+        },
+        "84": {
+          "Name": "Red Lobster",
+          "Email": "security@redlobster.com"
+        },
+        "85": {
+          "Name": "Outback Steakhouse",
+          "Email": "security@outback.com"
+        },
+        "86": {
+          "Name": "Applebee's",
+          "Email": "security@applebees.com"
+        },
+        "87": {
+          "Name": "Chili's",
+          "Email": "security@chilis.com"
+        },
+        "88": {
+          "Name": "TGI Fridays",
+          "Email": "security@tgifridays.com"
+        },
+        "89": {
+          "Name": "Cracker Barrel",
+          "Email": "security@crackerbarrel.com"
+        },
+        "90": {
+          "Name": "Buffalo Wild Wings",
+          "Email": "security@buffalowildwings.com"
+        },
+        "91": {
+          "Name": "Ruby Tuesday",
+          "Email": "security@rubytuesday.com"
+        },
+        "92": {
+          "Name": "Golden Corral",
+          "Email": "security@goldencorral.com"
+        }
+      },
+      
+    "Subject": {
+        "1": "Order Confirmed",
+        "2": "Order Details",
+        "3": "Order Status",
+        "4": "Order Tracking",
+        "5": "Order History",
+        "6": "Order Receipt",
+        "7": "Order Summary",
+        "8": "Order Delivery",
+        "9": "Order Shipped",
+        "10": "Order Arrival",
+        "11": "Order Progress",
+        "12": "Order Number",
+        "13": "Order ID",
+        "14": "Order Dispatch",
+        "15": "Order Verification",
+        "16": "Order Shipping",
+        "17": "Order Fulfillment",
+        "18": "Order Tracking Info",
+        "19": "Order Delivery Time",
+        "20": "Order Delivery Status",
+        "21": "Order Delivery Date",
+        "22": "Payment Received",
+        "23": "Payment Confirmation",
+        "24": "Payment Status",
+        "25": "Payment Information",
+        "26": "Payment Details",
+        "27": "Payment Method",
+        "28": "Payment History",
+        "29": "Payment Update",
+        "30": "Payment Approval",
+        "31": "Payment Transaction",
+        "32": "Payment Processing",
+        "33": "Payment Complete",
+        "34": "Payment Receipt",
+        "35": "Payment ID",
+        "36": "Payment Gateway",
+        "37": "Payment Secure",
+        "38": "Payment Failed",
+        "39": "Payment Pending",
+        "40": "Payment Cancelled",
+        "41": "Payment Accepted",
+        "42": "Payment Declined",
+        "43": "Payment Verification",
+        "44": "Payment Type",
+        "45": "Payment Amount",
+        "46": "Password Reset Request",
+        "47": "Password Changed",
+        "48": "Password Recovery",
+        "49": "Password Update",
+        "50": "Password Help",
+        "51": "Password Strength",
+        "52": "Password Requirements",
+        "53": "Password Guidelines",
+        "54": "Password Verification",
+        "55": "Password Confirm",
+        "56": "Password Safe",
+        "57": "Password Security",
+        "58": "Password Forgotten",
+        "59": "Shipping Information",
+        "60": "Shipping Update",
+        "61": "Shipping Status",
+        "62": "Shipping Details",
+        "63": "Shipping History",
+        "64": "Shipping Delivery",
+        "65": "Shipping Arrival",
+        "66": "Shipping Confirmation",
+        "67": "Shipping Progress",
+        "68": "Shipping Carrier",
+        "69": "Shipping Method",
+        "70": "Shipping Cost",
+        "71": "Shipping ETA",
+        "72": "Shipping Destination",
+        "73": "Shipping Date",
+        "74": "Shipping Tracking",
+        "75": "Shipping Notifications",
+        "76": "Shipping Address",
+        "77": "Shipping Scheduled",
+        "78": "Shipping Label",
+        "79": "Shipping Complete",
+        "80": "Shipping Time",
+        "81": "Shipping Delivery Date",
+        "82": "Order Payment",
+        "83": "Order Shipping",
+        "84": "Order Cost",
+        "85": "Order Delivery",
+        "86": "Order Total Cost",
+        "87": "Order Shipping Cost",
+        "88": "Order Payment Info",
+        "89": "Order Delivery Info",
+        "90": "Order Shipping Info",
+        "91": "Order Delivery Address",
+        "92": "Order Shipping Address",
+        "93": "Order Delivery Estimate",
+        "94": "Order Delivery Schedule",
+        "95": "Order Delivery Method",
+        "96": "Order Delivery Options",
+        "97": "Order Delivery Verification",
+        "98": "Order Delivery Complete",
+        "99": "Order Delivery Progress",
+        "100": "Order Delivery Provider",
+        "101": "Order Delivery Confirm",
+        "102": "Payment Confirmed",
+        "103": "Payment Received Time",
+        "104": "Payment Received Date",
+        "105": "Payment Method Type",
+        "106": "Payment Received Amount",
+        "107": "Payment Received Info",
+        "108": "Payment Received Status",
+        "109": "Payment Received Details",
+        "110": "Payment Received Approval",
+        "111": "Payment Received Update",
+        "112": "Payment Received Receipt",
+        "113": "Payment Received Verified",
+        "114": "Payment Received Transaction",
+        "115": "Payment Received Secure",
+        "116": "Password Reset Successful",
+        "117": "Password Reset Process",
+        "118": "Password Reset Instructions",
+        "119": "Password Reset Email",
+        "120": "Password Reset Code",
+        "121": "Order Status Update",
+        "122": "Order Delivery Update",
+        "123": "Order Shipping Update",
+        "124": "Order Payment Update",
+        "125": "Payment Update Request",
+        "126": "Payment Update Approval",
+        "127": "Payment Update Confirm",
+        "128": "Payment Update Complete",
+        "129": "Password Reset Confirm",
+        "130": "Password Reset Email Sent",
+        "131": "Shipping Delivery Confirm",
+        "132": "Shipping Delivery Update",
+        "133": "Shipping Delivery ETA",
+        "134": "Shipping Delivery Tracking",
+        "135": "Order Shipping Confirmation",
+        "136": "Order Payment Confirmation",
+        "137": "Order Payment Details",
+        "138": "Order Payment Received",
+        "139": "Order Payment Verified",
+        "140": "Order Payment Approval",
+        "141": "Payment Approval Status",
+        "142": "Payment Approval Complete",
+        "143": "Payment Approval Received",
+        "144": "Password Strength Check",
+        "145": "Password Requirements Met"
+    },
+
+    "Bodies":{
+        "1":"Your order confirmations bring a sense of clarity and assurance to your inbox, illuminating the details of your transaction.",
+        "2":"Your shipment notifications create a rush of excitement and anticipation, plunging you into the details of your delivery progress.",
+        "3":"Your delivery updates carry vital information and demonstrate the constant dance of change in your order status.",
+        "4":"Your receipts provide a soft and organized record of all your purchases, blanketing your email inbox with essential details.",
+        "5":"Your order confirmation pages burst with information, painting a vivid picture of the details of your purchase.",
+        "6":"Your tracking updates surge through your account, providing strong and steady insight into the progress of your delivery.",
+        "7":"Your delivery notifications glide effortlessly into your inbox, providing a bird's-eye view of the progress of your order.",
+        "8":"Your order updates leap and flicker, keeping you informed and up-to-date on the latest developments in your delivery.",
+        "9":"Your order status changes convey the ever-changing winds of progress in your delivery, howling through your notifications.",
+        "10":"Your delivery routes wind steadily through the physical landscape, carrying your order toward its final destination with unwavering determination.",
+        "11":"Your packages journey from the warehouse, braving the elements and navigating through bustling cities, all in the name of delivering your order.",
+        "12":"Your delivery drivers navigate twisting roads, delivering your package with speed and efficiency, bringing it ever closer to your door.",
+        "13":"Your delivery progress is monitored at every step, with updates and notifications guiding your order on its journey to you.",
+        "14":"Your shipping information is carefully verified, ensuring that your order arrives at the correct address and in a timely manner.",
+        "15":"Your order is packaged with care, with each item nestled securely in its box, ready for the journey ahead.",
+        "16":"Your delivery confirmation provides a final update, letting you know that your order has arrived safely at its destination.",
+        "17":"Your delivery process is seamless, with all the necessary information and updates flowing smoothly from start to finish.",
+        "18":"Your order tracking page provides a comprehensive view of your delivery progress, from the moment it leaves the warehouse to its arrival at your doorstep.",
+        "19":"Your delivery status is updated in real-time, providing you with an accurate and up-to-date picture of where your order is and when it will arrive."
+    }
+}

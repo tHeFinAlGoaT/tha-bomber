@@ -1,0 +1,9 @@
+{
+    "brevo": {
+        "smtp_server": "smtp-relay.brevo.com",
+        "1": {
+            "user": "2shiestyangel@gmail.com",
+            "password": "naEQM2jrs0BIcOK8"
+        }
+    }
+}
