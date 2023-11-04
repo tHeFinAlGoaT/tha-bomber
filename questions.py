@@ -29,10 +29,16 @@ questions = [
         message="delay",
         validate=validate_amount_and_delay,
     ),
-        inquirer.List(
-            "proxies",
-            message="Use proxies (less emails sent, more anonymous)?",
-            choices=["yes", "no"],
-            default="no",
+    inquirer.List(
+        "proxies",
+        message="Use proxies (less emails sent, more anonymous)?",
+        choices=["yes", "no"],
+        default="no",
+    ),
+    inquirer.List(
+        "debug",
+        message="Enable debugging (will print errors out)?",
+        choices=["yes", "no"],
+        default="no",
     ),
 ]

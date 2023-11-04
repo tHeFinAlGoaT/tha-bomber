@@ -57,7 +57,7 @@ center = shutil.get_terminal_size().columns
 try:
     kernel = ctypes.windll.kernel32.SetConsoleTitleW
 except:
-    print("ctypes.windll is not supported on linux")
+    print("[yellow]ctypes.windll is not supported on linux. it is purely for esthetic reasons, you can ignore this.")
 
 r = Fore.RED
 m = Fore.MAGENTA
@@ -76,8 +76,12 @@ class Bomber:
         self.target = self.answers["target"]
         self.amount = self.answers["amount"]
         self.delay = self.answers["delay"]
+        self.debug = self.answers["debug"]
+        self.error_message = "An error occurred:\n"
         self.use_proxies = self.answers["proxies"]
-        self.available_proxies = get_proxies()
+        if self.use_proxies:
+            self.available_proxies = get_proxies()
+
 
     def clear(self) -> None:
         os.system("cls" if os.name == "nt" else "clear")
@@ -85,7 +89,7 @@ class Bomber:
     def cool_graphics(self) -> None:
         self.clear()
         try:
-            kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if self.available_proxies else 'None'}   |   Python Version: {platform.python_version()}")
+            kernel(f"Blic Bomber   |   Sent: {Stats.sent}  Failed: {Stats.failed}   |   Proxy: {'Active' if self.use_proxies == 'yes' else 'None'}   |   Python Version: {platform.python_version()}")
         except:
             pass
         print(fade.purplepink(self.cBanner))
@@ -131,9 +135,13 @@ class Bomber:
             smtp_password = user_data['password']
 
             if self.use_proxies == "yes":
-                proxy = random.choice(self.available_proxies)
-                proxy_ip = proxy.split(":")[0]
-                proxy_port = int(proxy.split(":")[1])
+                if self.available_proxies:
+                    proxy = random.choice(self.available_proxies)
+                    proxy_ip = proxy.split(":")[0]
+                    proxy_port = int(proxy.split(":")[1])
+                else:
+                    print("Do not select to use proxies if your settings/proxies.txt is empty.")
+                    os._exit(1)
 
                 for proxy_type in [socks.SOCKS5, socks.SOCKS4, socks.HTTP]:
                     try:
@@ -146,7 +154,9 @@ class Bomber:
                             server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
                             Stats.sent += 1
                             break
-                    except:
+                    except Exception as e:
+                        if self.debug:
+                            print(self.error_message, e)
                         Stats.failed += 1
 
             else:
@@ -157,17 +167,26 @@ class Bomber:
                         text = msg.as_string()
                         server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
                         Stats.sent += 1
-                except:
+                except Exception as e:
+                    if self.debug:
+                        print(self.error_message, e)
                     Stats.failed += 1
 
         except Exception as e:
-            print(f"Error: {e}")
-                   
+            if self.debug:
+                print(e)
+            pass
+
     def start(self) -> None:
         for _ in range(int(self.amount)):
             try:
                 threading.Thread(target=self.bomb).start()
-            except:
+            except Exception as e:
+                if self.debug:
+                    print(self.error_message, e)
                 pass
 
             time.sleep(int(self.delay))
+
+#TODO: progress bar, perhaps
+#TODO: customize debug level
