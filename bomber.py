@@ -13,7 +13,7 @@ from colorama import *
 
 import inquirer
 from questions import questions
-from proxies import get_proxies
+from utils import get_proxies, get_remaining_emails
 
 import json
 from email.mime.multipart import MIMEMultipart
@@ -155,12 +155,9 @@ class Bomber:
                             server.starttls()
                             server.login(smtp_username, smtp_password)
                             text = msg.as_string()
-                            server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
-                            
-                            with self.progress_lock:
-                                Stats.sent += 1
-                                self.progress.update(self.progress_task, completed=Stats.sent)
-                                print("updated")
+                            server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)            
+                            Stats.sent += 1
+                            self.progress.update(self.progress_task, completed=Stats.sent)
                             break
                     except Exception as e:
                         if self.debug:
