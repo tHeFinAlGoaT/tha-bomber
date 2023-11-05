@@ -13,7 +13,6 @@ from colorama import *
 
 import inquirer
 from questions import questions
-from utils import get_proxies, get_remaining_emails
 
 import json
 from email.mime.multipart import MIMEMultipart
