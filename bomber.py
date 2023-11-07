@@ -13,6 +13,7 @@ from colorama import *
 
 import inquirer
 from questions import questions
+from utils import get_proxies
 
 import json
 from email.mime.multipart import MIMEMultipart
@@ -135,9 +136,9 @@ class Bomber:
             user_data = service_data["registered_users"][user_id]
 
             smtp_username = user_data['user']
-            smtp_password = user_data['password']
+            smtp_password = user_data['smtp_password']
 
-            if self.use_proxies == "yes":
+            if self.use_proxies.lower() in ["yes", "y"]:
                 if self.available_proxies:
                     proxy = random.choice(self.available_proxies)
                     proxy_ip = proxy.split(":")[0]
@@ -159,7 +160,7 @@ class Bomber:
                             self.progress.update(self.progress_task, completed=Stats.sent)
                             break
                     except Exception as e:
-                        if self.debug:
+                        if self.debug.lower() in ["yes", "y"]:
                             print(self.error_message, e)
                         Stats.failed += 1
 
@@ -173,13 +174,13 @@ class Bomber:
                         Stats.sent += 1
                         self.progress.update(self.progress_task, completed=Stats.sent)
                 except Exception as e:
-                    if self.debug:
+                    if self.debug.lower() in ["yes", "y"]:
                         print(self.error_message, e)
                     Stats.failed += 1
 
         except Exception as e:
-            if self.debug:
-                print(e)
+            if self.debug.lower() in ["yes", "y"]:
+                print(self.error_message, e)
             pass
 
     def start(self) -> None:
@@ -190,7 +191,7 @@ class Bomber:
                     self.threads.append(thread)
                     thread.start()
                 except Exception as e:
-                    if self.debug:
+                    if self.debug.lower() in ["yes", "y"]:
                         print(self.error_message, e)
                     pass
 

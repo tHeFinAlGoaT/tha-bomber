@@ -13,6 +13,11 @@ def validate_amount_and_delay(_answers, current) -> bool:
         raise inquirer.errors.ValidationError("", reason="\u001b[31mInvalid number.")
     return True
 
+def validate_proxies_and_debug(_answers, current) -> bool:
+    if not current.lower() in ["yes", "y", "no", "n"]:
+        raise inquirer.errors.ValidationError("", reason="\u001b[31mInvalid answer.")
+    return True    
+
 questions = [
     inquirer.Text(
         "target",
@@ -29,16 +34,14 @@ questions = [
         message="delay",
         validate=validate_amount_and_delay,
     ),
-    inquirer.List(
+    inquirer.Text(
         "proxies",
-        message="Use proxies (less emails sent, more anonymous)?",
-        choices=["yes", "no"],
-        default="no",
+        message="Use proxies? (y/n)",
+        validate=validate_proxies_and_debug,
     ),
-    inquirer.List(
+    inquirer.Text(
         "debug",
-        message="Enable debugging (will print errors out)?",
-        choices=["yes", "no"],
-        default="no",
+        message="Enable debugging? (y/n)",
+        validate=validate_proxies_and_debug
     ),
 ]
